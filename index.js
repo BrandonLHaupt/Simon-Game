@@ -1,7 +1,14 @@
 let level = 0;
 
+// button colors
 let buttonColors = ["red", "green", "blue", "yellow"];
-let randomChosenColor = nextSequence();
+let gamePattern = [];
+let randomChosenColor = buttonColors[nextSequence()[0]]
+gamePattern.push(randomChosenColor)
+// console.log(nextSequence())
+// console.log("Random color selected is: " + randomChosenColor)
+console.log("Game has chosen the color: " + gamePattern)
+// console.log("Random color selected is: " + buttonColors[gamePattern]);
 
 
 // $(".btn").each((e) => {
@@ -19,14 +26,21 @@ $(".btn").click(colorClicked);
 
 function colorClicked(e) {
   let className = e.currentTarget.classList[1];
+  // Tells us what color box is clicked
   console.log(className + " was clicked");
 }
 
+// function
 function nextSequence() {
   let randomNumber = [];
+
+  // random number generator
   let randomNum = Math.floor(Math.random() * 4);
   randomNumber.push(randomNum);
-  console.log(randomNumber);
+  // console.log("Random number is: " + randomNumber);
+  // console.log(randomNumber[0])
+  return randomNumber
 }
+
 
 nextSequence();
